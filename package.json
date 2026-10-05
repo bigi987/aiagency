@@ -1,0 +1,13 @@
+{
+  "name": "project-for-git",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix Git-project run dev"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^2.0.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

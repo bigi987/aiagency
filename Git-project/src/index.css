@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Onest:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  font-family: 'Manrope', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@theme {
+  --color-primary: #5044e5;
+}
+
+/* Smooth hero background gradient via pure CSS */
+.smooth-hero-gradient {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(ellipse 85% 70% at 15% 0%, rgba(186, 215, 255, 0.9) 0%, rgba(219, 234, 254, 0.55) 40%, rgba(255, 255, 255, 0) 80%),
+    radial-gradient(ellipse 70% 60% at 85% 0%, rgba(224, 231, 255, 0.6) 0%, rgba(238, 242, 255, 0.25) 40%, rgba(255, 255, 255, 0) 75%),
+    linear-gradient(180deg, rgba(219, 234, 254, 0.7) 0%, rgba(239, 246, 255, 0.35) 320px, rgba(255, 255, 255, 0) 750px);
+  background-repeat: no-repeat;
+}
+
+.dark .smooth-hero-gradient,
+:root.dark .smooth-hero-gradient {
+  background-color: #020617;
+  background-image: 
+    radial-gradient(ellipse 85% 70% at 15% 0%, rgba(30, 64, 175, 0.45) 0%, rgba(30, 58, 138, 0.22) 40%, rgba(2, 6, 23, 0) 80%),
+    radial-gradient(ellipse 70% 60% at 85% 0%, rgba(67, 56, 202, 0.3) 0%, rgba(49, 46, 129, 0.15) 40%, rgba(2, 6, 23, 0) 75%),
+    linear-gradient(180deg, rgba(30, 58, 138, 0.35) 0%, rgba(15, 23, 42, 0.2) 320px, rgba(2, 6, 23, 0) 750px);
+  background-repeat: no-repeat;
+}
+
+/* Slick slider arrows and dots styling */
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+}
+
+.slick-prev {
+  left: -12px;
+}
+
+.slick-next {
+  right: -12px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #5044e5;
+  font-size: 28px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  opacity: 1;
+}
+
+:where(.dark, .dark *) .slick-prev:before,
+:where(.dark, .dark *) .slick-next:before {
+  color: #a5b4fc;
+}
+
+.slick-dots {
+  bottom: -32px;
+}
+
+.slick-dots li button:before {
+  color: #94a3b8;
+  font-size: 8px;
+  opacity: 0.4;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #5044e5;
+  opacity: 1;
+}
+
+:where(.dark, .dark *) .slick-dots li button:before {
+  color: #64748b;
+  opacity: 0.5;
+}
+
+:where(.dark, .dark *) .slick-dots li.slick-active button:before {
+  color: #a5b4fc;
+  opacity: 1;
+}
+
