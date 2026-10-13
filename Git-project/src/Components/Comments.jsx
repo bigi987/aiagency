@@ -82,28 +82,32 @@ const Comments = () => {
     }
 
   return (
-    <section id="comments" className="px-4 py-16 text-slate-900 sm:px-6 lg:py-24 dark:text-slate-100" aria-labelledby="comments-title">
-      <div className="mx-auto w-full max-w-7xl">
-        <header className="mx-auto mb-10 max-w-[620px] text-center sm:mb-12">
-          <h2 id="comments-title" className="m-0 text-3xl font-extrabold leading-tight text-slate-950 sm:text-4xl dark:text-white">Our reviews</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-slate-500 sm:text-base dark:text-slate-400">What our clients say about us</p>
+    <section id="comments" className="mx-auto w-full max-w-7xl px-6 py-16 text-slate-900 sm:px-10 lg:py-20 dark:text-slate-100 animate-fade-in-up animate-on-load" aria-labelledby="comments-title">
+      <div className="mx-auto w-full">
+        <header className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+          <h2 id="comments-title" className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+            What Our Clients Say
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+            Honest feedback from people and companies we have partnered with.
+          </p>
         </header>
-        <div className="relative px-12 pb-10 sm:px-16 [&_.slick-dots]:bottom-[-32px] [&_.slick-slide]:h-auto [&_.slick-slide]:px-3 sm:[&_.slick-slide]:px-[18px] [&_.slick-slide>div]:h-full [&_.slick-track]:flex">
+
+        <div className="relative px-8 pb-10 sm:px-12 [&_.slick-dots]:bottom-[-32px] [&_.slick-slide]:h-auto [&_.slick-slide]:px-3 sm:[&_.slick-slide]:px-4 [&_.slick-slide>div]:h-full [&_.slick-track]:flex">
           <Slider ref={sliderRef} {...settings}>
             {reviewsData.map((item) => (
               <article className="h-full" key={item.id}>
-                <div className="flex h-full min-h-[320px] flex-col justify-between rounded-lg border border-slate-200/80 bg-white/85 p-7 shadow-[0_14px_38px_rgba(30,41,59,0.07)] backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:border-indigo-300/70 hover:shadow-[0_20px_44px_rgba(30,41,59,0.11)] sm:min-h-[340px] sm:p-8 lg:p-9 dark:border-slate-700/70 dark:bg-slate-900/80 dark:shadow-black/20 dark:hover:border-indigo-300/50 dark:hover:shadow-black/30">
-                  <div className="flex items-center gap-[15px]">
-                    <img src={item.photo} alt={item.name} className="h-14 w-14 shrink-0 rounded-full border-2 border-white object-cover shadow-[0_0_0_1px_rgba(80,68,229,0.18)] dark:border-slate-800" />
+                <div className="flex h-full min-h-[300px] flex-col justify-between rounded-[2.5rem] border border-white/80 bg-white/70 p-7 shadow-xl shadow-primary/5 backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15 sm:p-8 lg:p-9 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-primary/40 dark:hover:shadow-primary/20">
+                  <div className="flex items-center gap-4">
+                    <img src={item.photo} alt={item.name} className="size-14 shrink-0 rounded-full object-cover ring-2 ring-primary/20" />
                     <div>
-                      <h3 className="mb-1 text-base font-bold leading-snug text-slate-950 dark:text-white">{item.name}</h3>
-                      <p className="mt-0.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">{item.role}</p>
-                      <p className="mt-0.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">{item.company}</p>
+                      <h3 className="text-base font-bold text-slate-900 dark:text-white">{item.name}</h3>
+                      <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{item.role} • <span className="text-primary dark:text-indigo-400">{item.company}</span></p>
                     </div>
                   </div>
-                  <div className="mt-8">
-                    <p className="m-0 text-[15px] leading-8 text-slate-600 dark:text-slate-300">{item.text}</p>
-                    <p className="mt-[17px] text-[15px] leading-none text-amber-400" aria-label={item.rating.length + ' star rating'}>{item.rating}</p>
+                  <div className="mt-6">
+                    <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{item.text}</p>
+                    <p className="mt-4 text-sm tracking-wider text-amber-400" aria-label={item.rating.length + ' star rating'}>{item.rating}</p>
                   </div>
                 </div>
               </article>
@@ -113,7 +117,7 @@ const Comments = () => {
             type="button"
             aria-label="Previous review"
             onClick={() => sliderRef.current?.slickPrev()}
-            className="absolute left-0 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-indigo-100 bg-white/95 text-2xl leading-none text-indigo-600 shadow-lg shadow-slate-900/10 transition duration-200 hover:scale-105 hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600 active:scale-95 dark:border-slate-700 dark:bg-slate-900/95 dark:text-indigo-300 dark:hover:border-indigo-400 dark:hover:bg-indigo-500 dark:hover:text-white dark:focus-visible:outline-indigo-300"
+            className="absolute left-0 top-1/2 z-20 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200/90 bg-white/90 text-xl font-bold text-slate-700 shadow-lg shadow-slate-200/30 backdrop-blur-md transition duration-200 hover:scale-105 hover:border-primary hover:bg-primary hover:text-white active:scale-95 dark:border-white/10 dark:bg-slate-900/90 dark:text-slate-200 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white"
           >
             <span aria-hidden="true">←</span>
           </button>
@@ -121,7 +125,7 @@ const Comments = () => {
             type="button"
             aria-label="Next review"
             onClick={() => sliderRef.current?.slickNext()}
-            className="absolute right-0 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-indigo-100 bg-white/95 text-2xl leading-none text-indigo-600 shadow-lg shadow-slate-900/10 transition duration-200 hover:scale-105 hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600 active:scale-95 dark:border-slate-700 dark:bg-slate-900/95 dark:text-indigo-300 dark:hover:border-indigo-400 dark:hover:bg-indigo-500 dark:hover:text-white dark:focus-visible:outline-indigo-300"
+            className="absolute right-0 top-1/2 z-20 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200/90 bg-white/90 text-xl font-bold text-slate-700 shadow-lg shadow-slate-200/30 backdrop-blur-md transition duration-200 hover:scale-105 hover:border-primary hover:bg-primary hover:text-white active:scale-95 dark:border-white/10 dark:bg-slate-900/90 dark:text-slate-200 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white"
           >
             <span aria-hidden="true">→</span>
           </button>

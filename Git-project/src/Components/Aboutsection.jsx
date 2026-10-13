@@ -26,12 +26,12 @@ const Aboutsection = () => {
   },
 ];
   return (
-    <section id="about" className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
+    <section id="about" className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-10 sm:py-20 lg:px-16 animate-fade-in-up animate-on-load">
       <div className="mb-12 text-center sm:mb-16">
-        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
-          How can <span className="text-primary">We Help?</span>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+          How can We Help?
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg dark:text-slate-400">
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
           From strategy to execution, we provide comprehensive solutions to drive your business forward.
         </p>
       </div>
@@ -39,9 +39,9 @@ const Aboutsection = () => {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {servicesData.map((item, index) => (
           <div
-            className="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-white/80 bg-white/70 p-7 shadow-xl shadow-primary/5 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/15 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-primary/40 dark:hover:shadow-primary/20"
+            key={item.title}
+            className={`group relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/70 p-7 shadow-xl shadow-primary/5 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15 dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-primary/40 dark:hover:shadow-primary/20 animate-scale-in animate-on-load delay-${(index + 1) * 200}`}
           >
-
             <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl transition duration-500 group-hover:bg-primary/20" />
 
             <div>
@@ -56,14 +56,14 @@ const Aboutsection = () => {
               <h3 className="text-xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-primary dark:text-white dark:group-hover:text-indigo-400">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 {item.description}
               </p>
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary opacity-0 transition-all duration-300 group-hover:opacity-100 dark:text-indigo-400">
+            <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 group-hover:text-primary-hover dark:text-indigo-400">
               <span>Learn more</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
             </div>
           </div>
         ))}

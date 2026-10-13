@@ -14,6 +14,80 @@ html, body {
 
 @theme {
   --color-primary: #5044e5;
+  --color-primary-hover: #4338ca;
+  --color-primary-light: #6366f1;
+
+  --animate-fade-in: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-up: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-down: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-in: scaleIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float-slow: floatSlow 6s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.94) translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+/* Stagger animation delay helper utilities */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Keep elements initially invisible before keyframe animation runs */
+.animate-on-load {
+  animation-fill-mode: both;
 }
 
 /* Smooth hero background gradient via pure CSS */

@@ -28,6 +28,7 @@ import a_icon4 from './a_icon4.png'
 import services1 from './services1.png'
 import services2 from './services2.png'
 import services3 from './services3.png'
+import brom from './brom.avif'
 
 export const company_logos = [
   microsoft_logo,
@@ -63,6 +64,7 @@ const assets = {
   menu_icon_dark,
   sun_icon,
   moon_icon,
+  brom,
 }
 
 export default assets
